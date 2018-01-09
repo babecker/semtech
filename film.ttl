@@ -1,0 +1,91 @@
+@prefix	rdf: <http://www.w3.org/1999/02/22−rdf−syntax−ns#>. 
+@prefix rdfs: <http://www.w3.org/2000/01/rdf−schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix bsp: <https://www.dropbox.com/preview/>.
+@prefix : <https://www.dropbox.com/preview/>.
+
+:Film	:hatGenre			:Genre;
+		:hatSchauspieler	:Schauspieler;
+		:hatHauptdarsteller :Hauptdarsteller;
+		:hatPerformance 	:Performance;
+		:hatRegisseur		:Regisseur.
+
+:Schauspieler	rdfs:subClassOf	:Person.
+:Regisseur		rdfs:subClassOf	:Person.
+
+:Hauptdarsteller 	rdfs:subClassOf	:Schauspieler.
+
+:Komoedie		rdfs:subClassOf :Genre.
+
+:IvanReitman 	rdf:type	:Regisseur.
+:RidleyScott	rdf:type	:Regisseur.
+
+:ArnoldSchwarzenegger	rdf:type		:Schauspieler;
+						:hatGender		:Mann;
+						:hatPerformance	:JuliusBenedict;
+						:hatPerformance	:MrFreeze.
+
+:DannyDeVito	rdf:type		:Schauspieler;
+				:hatGender		:Mann;
+				:hatPerformance	:VincentBenedict;
+				:hatPerformance	:Pinguin.
+
+:JohnCandy	rdf:type		:Schauspieler;
+			:hatGender		:Mann;
+			:hatPerformance	:FreddieBauer.
+			
+:SigourneyWeaver	rdf:type		:Schauspieler;
+					:hatGender		:Frau;
+					:hatPerformance	:Ripley;
+					:hatPerformance	:DanaBarrett.
+					
+:TomHanks	rdf:type		:Schauspieler;
+			:hatGender		:Mann;
+			:hatPerformance	:ForrestGump;
+			:hatPerformance	:AllenBauer.
+
+:Splash		rdf:type			:Film;
+			rdfs:label			"Splash"^^xsd:string;
+			:hatGenre			:Komoedie;
+			:hatSchauspieler	:JohnCandy;
+			:hatSchauspieler	:TomHanks;
+			:hatPerformance		:AllenBauer;
+			:hatPerformance		:FreddieBauer;
+			:hatRegie			:RonHoward.
+			
+:ForrestGumpMovie	rdf:type			:Film;
+					rdfs:label			"Forrest Gump"^^xsd:string;
+					:hatSchauspieler	:TomHanks;
+					:hatPerformance		:ForrestGump.
+			
+:Twins		rdf:type			:Film;
+			rdfs:label			"Twins"^^xsd:string;
+			:hatGenre			:Komoedie;
+			:hatHauptdarsteller	:ArnoldSchwarzenegger;
+			:hatHauptdarsteller	:DannyDeVito;
+			:hatPerformance		:JuliusBenedict;
+			:hatPerformance		:VincentBenedict.
+			
+:Batman1992	rdf:type			:Film;
+			rdfs:label			"Batmans Rückkehr"^^xsd:string;
+			:hatSchauspieler	:DannyDeVito;
+			:hatPerformance		:Batman;
+			:hatPerformance		:Pinguin.
+			
+:Batman1997	rdf:type			:Film;
+			rdfs:label			"Batman & Robin"^^xsd:string;
+			:hatSchauspieler	:ArnoldSchwarzenegger;
+			:hatPerformance		:Batman;
+			:hatPerformance		:MrFreeze.
+			
+:Alien		rdf:type			:Film;
+			rdfs:label			"Alien – Das unheimliche Wesen aus einer fremden Welt"^^xsd:string;
+			:hatSchauspieler	:SigourneyWeaver;
+			:hatPerformance		:Ripley;
+			:hatRegie			:RidleyScott.
+			
+:GhostbustersTwo	rdf:type			:Film;
+					rdfs:label			"Ghostbusters 2"^^xsd:string;
+					:hatSchauspieler	:SigourneyWeaver;
+					:hatPerformance		:DanaBarrett;
+					:hatRegie			:IvanReitman.
